@@ -1,15 +1,35 @@
-/* ================= RESET ================= */
-* {
+/* ================= RESET + NORMALIZE ================= */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Helvetica, Arial, sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-size: 16px;
 }
 
 body {
+  font-family: Helvetica, Arial, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background: #fafafa;
   color: #111;
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Rimuove styling aggressivo mobile */
+button,
+input,
+textarea {
+  font-family: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
 }
 
 /* ================= HEADER ================= */
@@ -17,15 +37,17 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 28px 56px;
+  padding: clamp(20px, 4vw, 28px) clamp(24px, 6vw, 56px);
   background: #fff;
   border-bottom: 1px solid #eaeaea;
 }
 
+/* ================= LOGO ================= */
 .logo {
-  font-size: 22px;
+  font-size: clamp(18px, 2.5vw, 22px);
   letter-spacing: 6px;
   cursor: pointer;
+  user-select: none;
 }
 
 .logo .surname {
@@ -33,9 +55,11 @@ header {
   opacity: 0.7;
 }
 
-/* ================= LOGO PULSE ================= */
-.logo:hover {
-  animation: logo-pulse 0.8s ease-in-out infinite;
+/* Logo pulse hover (desktop only) */
+@media (hover: hover) {
+  .logo:hover {
+    animation: logo-pulse 0.9s ease-in-out infinite;
+  }
 }
 
 @keyframes logo-pulse {
@@ -44,7 +68,7 @@ header {
     letter-spacing: 6px;
   }
   50% {
-    transform: scale(1.06);
+    transform: scale(1.05);
     letter-spacing: 8px;
   }
   100% {
@@ -54,16 +78,24 @@ header {
 }
 
 /* ================= NAV ================= */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
 nav button {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 999px;
   padding: 10px 22px;
-  margin-left: 14px;
+  min-height: 44px;              /* tap target */
   cursor: pointer;
   font-size: 13px;
   letter-spacing: 1px;
-  transition: all 0.25s ease;
+  color: #111;
+  transition: background 0.25s ease, transform 0.15s ease;
 }
 
 nav button:hover {
@@ -71,7 +103,7 @@ nav button:hover {
 }
 
 nav button:active {
-  transform: scale(0.92);
+  transform: scale(0.95);
 }
 
 /* ================= MAIN ================= */
@@ -96,18 +128,20 @@ section.active {
 .home-center {
   flex-direction: column;
   text-align: center;
+  padding: 24px;
 }
 
 #welcome-text {
-  font-size: 42px;
+  font-size: clamp(28px, 6vw, 42px);
   margin-bottom: 12px;
   transition: opacity 0.6s ease;
 }
 
 .subtitle {
   color: #666;
-  font-size: 13px;
+  font-size: clamp(12px, 2.5vw, 13px);
   letter-spacing: 1.5px;
+  max-width: 480px;
   transition: opacity 0.6s ease;
 }
 
@@ -117,13 +151,13 @@ section.active {
 
 /* ================= RESUME ================= */
 #cv.active {
-  padding: 64px 80px;
+  padding: clamp(24px, 5vw, 64px);
   align-items: flex-start;
 }
 
 iframe {
   width: 100%;
-  height: 80vh;
+  height: min(80vh, 900px);
   border-radius: 24px;
   border: 1px solid #eee;
 }
@@ -133,11 +167,11 @@ iframe {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 80px 24px;
+  padding: clamp(40px, 6vw, 80px) 24px;
 }
 
 #letters h1 {
-  font-size: 42px;
+  font-size: clamp(30px, 6vw, 42px);
   margin-bottom: 48px;
 }
 
@@ -145,7 +179,7 @@ iframe {
   max-width: 640px;
   width: 100%;
   margin-bottom: 32px;
-  padding: 32px;
+  padding: clamp(24px, 4vw, 32px);
   border-radius: 24px;
   background: #fff;
   border: 1px solid #eee;
@@ -163,17 +197,17 @@ iframe {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 80px 24px;
+  padding: clamp(40px, 6vw, 80px) 24px;
 }
 
 #certifications h1 {
-  font-size: 42px;
+  font-size: clamp(30px, 6vw, 42px);
 }
 
 .cert-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
   margin-top: 48px;
   width: 100%;
   max-width: 1000px;
@@ -182,7 +216,7 @@ iframe {
 .cert-card {
   background: #fff;
   border-radius: 32px;
-  padding: 32px;
+  padding: clamp(24px, 4vw, 32px);
   border: 1px solid #eee;
   box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 }
@@ -198,9 +232,9 @@ iframe {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;                /* comportamento automatico */
+  flex-wrap: wrap;               /* automatico */
   gap: 16px 56px;
-  padding: 48px 24px;
+  padding: 40px 24px;
   background: #fff;
   border-top: 1px solid #eaeaea;
   text-align: center;
@@ -216,32 +250,12 @@ iframe {
   text-decoration: none;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= SMALL SCREENS ================= */
 @media (max-width: 900px) {
   header {
     flex-direction: column;
-    gap: 20px;
-  }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-  }
-
-  nav button {
-    margin-left: 0;
+    gap: 16px;
   }
 }
 
-@media (max-width: 600px) {
-  #welcome-text {
-    font-size: 32px;
-  }
-
-  .subtitle {
-    font-size: 12px;
-  }
-}
 
