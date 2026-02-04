@@ -7,29 +7,43 @@
   box-sizing: border-box;
 }
 
+/* ================= ROOT / MOBILE SAFETY ================= */
 html {
+  font-size: 16px;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  font-size: 16px;
 }
 
 body {
-  font-family: Helvetica, Arial, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #fafafa;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #fafafa;
   color: #111;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Rimuove styling aggressivo mobile */
+/* ================= LINK RESET (NO BLUE ANYWHERE) ================= */
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ================= FORM ELEMENT RESET ================= */
 button,
 input,
 textarea {
   font-family: inherit;
+  font-size: inherit;
   color: inherit;
+  background: none;
+  border: none;
+  outline: none;
   -webkit-appearance: none;
   appearance: none;
-  border-radius: 0;
 }
 
 /* ================= HEADER ================= */
@@ -38,7 +52,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: clamp(20px, 4vw, 28px) clamp(24px, 6vw, 56px);
-  background: #fff;
+  background: #ffffff;
   border-bottom: 1px solid #eaeaea;
 }
 
@@ -55,7 +69,7 @@ header {
   opacity: 0.7;
 }
 
-/* Logo pulse hover (desktop only) */
+/* Pulse animation only where hover exists */
 @media (hover: hover) {
   .logo:hover {
     animation: logo-pulse 0.9s ease-in-out infinite;
@@ -80,21 +94,21 @@ header {
 /* ================= NAV ================= */
 nav {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 12px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 nav button {
-  background: #fff;
-  border: 1px solid #ddd;
+  background: #ffffff;
+  border: 1px solid #dddddd;
   border-radius: 999px;
-  padding: 10px 22px;
-  min-height: 44px;              /* tap target */
-  cursor: pointer;
-  font-size: 13px;
+  padding: 12px 24px;
+  min-height: 44px;
+  font-size: 14px;
   letter-spacing: 1px;
-  color: #111;
+  cursor: pointer;
   transition: background 0.25s ease, transform 0.15s ease;
 }
 
@@ -103,7 +117,7 @@ nav button:hover {
 }
 
 nav button:active {
-  transform: scale(0.95);
+  transform: scale(0.96);
 }
 
 /* ================= MAIN ================= */
@@ -128,25 +142,19 @@ section.active {
 .home-center {
   flex-direction: column;
   text-align: center;
-  padding: 24px;
+  padding: 32px 24px;
 }
 
 #welcome-text {
-  font-size: clamp(28px, 6vw, 42px);
+  font-size: clamp(30px, 7vw, 44px);
   margin-bottom: 12px;
-  transition: opacity 0.6s ease;
 }
 
 .subtitle {
+  font-size: clamp(13px, 3vw, 14px);
   color: #666;
-  font-size: clamp(12px, 2.5vw, 13px);
   letter-spacing: 1.5px;
   max-width: 480px;
-  transition: opacity 0.6s ease;
-}
-
-.fade-out {
-  opacity: 0;
 }
 
 /* ================= RESUME ================= */
@@ -159,13 +167,12 @@ iframe {
   width: 100%;
   height: min(80vh, 900px);
   border-radius: 24px;
-  border: 1px solid #eee;
+  border: 1px solid #eeeeee;
 }
 
 /* ================= LETTERS ================= */
 #letters.active {
   flex-direction: column;
-  align-items: center;
   text-align: center;
   padding: clamp(40px, 6vw, 80px) 24px;
 }
@@ -176,14 +183,14 @@ iframe {
 }
 
 .card {
-  max-width: 640px;
   width: 100%;
-  margin-bottom: 32px;
+  max-width: 640px;
+  background: #ffffff;
   padding: clamp(24px, 4vw, 32px);
   border-radius: 24px;
-  background: #fff;
-  border: 1px solid #eee;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  border: 1px solid #eeeeee;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  margin-bottom: 32px;
 }
 
 .reference-img {
@@ -195,13 +202,8 @@ iframe {
 /* ================= CERTIFICATIONS ================= */
 #certifications.active {
   flex-direction: column;
-  align-items: center;
   text-align: center;
   padding: clamp(40px, 6vw, 80px) 24px;
-}
-
-#certifications h1 {
-  font-size: clamp(30px, 6vw, 42px);
 }
 
 .cert-grid {
@@ -214,11 +216,11 @@ iframe {
 }
 
 .cert-card {
-  background: #fff;
-  border-radius: 32px;
+  background: #ffffff;
+  border-radius: 28px;
   padding: clamp(24px, 4vw, 32px);
-  border: 1px solid #eee;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  border: 1px solid #eeeeee;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 }
 
 .cert-card img {
@@ -227,15 +229,15 @@ iframe {
   margin-bottom: 24px;
 }
 
-/* ================= FOOTER ================= */
+/* ================= FOOTER / CONTACTS ================= */
 .contacts {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;               /* automatico */
+  flex-wrap: wrap;
   gap: 16px 56px;
   padding: 40px 24px;
-  background: #fff;
+  background: #ffffff;
   border-top: 1px solid #eaeaea;
   text-align: center;
 }
@@ -244,34 +246,30 @@ iframe {
   white-space: nowrap;
 }
 
-.contacts a,
-.contacts span {
-  color: #111;
-  text-decoration: none;
-}
-
-/* ================= SMALL SCREENS ================= */
+/* ================= TABLET ================= */
 @media (max-width: 900px) {
   header {
     flex-direction: column;
     gap: 16px;
   }
 }
-/* ================= MOBILE NAV IMPROVEMENT ================= */
+
+/* ================= MOBILE (REAL FIX) ================= */
 @media (max-width: 600px) {
   nav {
-    flex-direction: column;
     width: 100%;
-    align-items: center;
+    flex-direction: column;
   }
 
   nav button {
     width: 100%;
-    max-width: 320px;
-    font-size: 14px;
-    padding: 14px 24px;
+    max-width: 360px;
+    font-size: 15px;
+    padding: 16px 24px;
+  }
+
+  .contacts {
+    flex-direction: column;
+    gap: 20px;
   }
 }
-
-
-
