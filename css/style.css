@@ -257,5 +257,21 @@ iframe {
     gap: 16px;
   }
 }
+/* ================= MOBILE NAV IMPROVEMENT ================= */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  nav button {
+    width: 100%;
+    max-width: 320px;
+    font-size: 14px;
+    padding: 14px 24px;
+  }
+}
+
 
 
