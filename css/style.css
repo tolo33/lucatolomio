@@ -25,11 +25,32 @@ header {
 .logo {
   font-size: 22px;
   letter-spacing: 6px;
+  cursor: pointer;
 }
 
 .logo .surname {
   font-weight: 300;
   opacity: 0.7;
+}
+
+/* ================= LOGO PULSE ================= */
+.logo:hover {
+  animation: logo-pulse 0.8s ease-in-out infinite;
+}
+
+@keyframes logo-pulse {
+  0% {
+    transform: scale(1);
+    letter-spacing: 6px;
+  }
+  50% {
+    transform: scale(1.06);
+    letter-spacing: 8px;
+  }
+  100% {
+    transform: scale(1);
+    letter-spacing: 6px;
+  }
 }
 
 /* ================= NAV ================= */
@@ -176,45 +197,24 @@ iframe {
 .contacts {
   display: flex;
   justify-content: center;
-  gap: 56px;
+  align-items: center;
+  flex-wrap: wrap;                /* comportamento automatico */
+  gap: 16px 56px;
   padding: 48px 24px;
   background: #fff;
   border-top: 1px solid #eaeaea;
+  text-align: center;
 }
 
 .contact-item {
   white-space: nowrap;
 }
 
-.contacts a {
+.contacts a,
+.contacts span {
   color: #111;
   text-decoration: none;
 }
-
-/* ================= LOGO HOVER PULSE ================= */
-.logo {
-  cursor: pointer;
-}
-
-.logo:hover {
-  animation: logo-pulse 0.8s ease-in-out infinite;
-}
-
-@keyframes logo-pulse {
-  0% {
-    transform: scale(1);
-    letter-spacing: 6px;
-  }
-  50% {
-    transform: scale(1.06);
-    letter-spacing: 8px;
-  }
-  100% {
-    transform: scale(1);
-    letter-spacing: 6px;
-  }
-}
-
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
@@ -243,13 +243,5 @@ iframe {
   .subtitle {
     font-size: 12px;
   }
-
-  .contacts {
-    flex-direction: column;
-    align-items: center;   
-    text-align: center;    
-    gap: 16px;
-  }
 }
 
-}
