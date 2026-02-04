@@ -47,7 +47,6 @@ nav button {
 
 nav button:hover {
   background: #f0f0f0;
-  border-color: #ccc;
 }
 
 nav button:active {
@@ -59,59 +58,39 @@ main {
   min-height: calc(100vh - 160px);
 }
 
-/* ================= SECTIONS (LOGICA BASE) ================= */
+/* ================= SECTIONS ================= */
 section {
   display: none;
   min-height: calc(100vh - 160px);
 }
 
 section.active {
-  display: block;
+  display: flex;
 }
 
 /* ================= HOME ================= */
-#home.active {
-  display: flex;
-  width: 100%;
+.home-center {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-#welcome-text,
-#subtitle-text {
+#welcome-text {
+  font-size: 42px;
+  margin-bottom: 12px;
+  transition: opacity 0.6s ease;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 13px;
+  letter-spacing: 1.5px;
   transition: opacity 0.6s ease;
 }
 
 .fade-out {
   opacity: 0;
-}
-
-.home-left {
-  width: 50%;
-  padding: 96px 80px;
-  display: flex;
-  flex-direction: column;
-}
-
-.home-left h1 {
-  font-size: 42px;
-  margin-bottom: 12px;
-}
-
-.subtitle {
-  color: #666;
-  max-width: 420px;
-  font-size: 13px;
-  letter-spacing: 1.5px;
-}
-
-.home-right {
-  width: 50%;
-}
-
-.home-right img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  padding: 60px;
 }
 
 /* ================= RESUME ================= */
@@ -128,7 +107,6 @@ iframe {
 
 /* ================= LETTERS ================= */
 #letters.active {
-  display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -159,7 +137,6 @@ iframe {
 
 /* ================= CERTIFICATIONS ================= */
 #certifications.active {
-  display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -193,68 +170,6 @@ iframe {
   margin-bottom: 24px;
 }
 
-/* ================= ABOUT ================= */
-#about.active {
-  padding: 80px 24px;
-  text-align: center;
-}
-
-#about h1 {
-  font-size: 42px;
-  margin-bottom: 64px;
-}
-
-.timeline {
-  max-width: 700px;
-  margin: 0 auto;
-  position: relative;
-  padding-left: 40px;
-  text-align: left;
-}
-
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 10px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: #e0e0e0;
-}
-.timeline-item {
-  position: relative;
-  margin-bottom: 48px;
-}
-
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  left: -14px;
-  top: 34px;
-  width: 10px;
-  height: 10px;
-  background: #111;
-  border-radius: 50%;
-}
-
-.timeline-date {
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: #999;
-  margin-bottom: 8px;
-  display: block;
-}
-
-.timeline-content h3 {
-  font-size: 18px;
-  margin-bottom: 6px;
-}
-
-.timeline-content p {
-  font-size: 14px;
-  color: #555;
-}
-
 /* ================= FOOTER ================= */
 .contacts {
   display: flex;
@@ -265,63 +180,16 @@ iframe {
   border-top: 1px solid #eaeaea;
 }
 
+.contact-item {
+  white-space: nowrap;
+}
+
 .contacts a {
   color: #111;
   text-decoration: none;
 }
 
-/* ================= EMOJI RAIN ================= */
-#emoji-rain {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 999;
-}
-
-.emoji {
-  position: absolute;
-  top: -40px;
-  font-size: 30px;
-  animation: fall linear forwards;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-/* ================= RESPONSIVE / MOBILE ================= */
-
-/* Evita spezzamento contatti */
-.contact-item {
-  white-space: nowrap;
-}
-
-.contacts a,
-.contacts span {
-  word-break: keep-all;
-}
-
-/* --------- <= 1200px --------- */
-@media (max-width: 1200px) {
-  header {
-    padding: 24px 32px;
-  }
-
-  .home-left {
-    padding: 72px 56px;
-  }
-
-  #letters h1,
-  #certifications h1,
-  #about h1 {
-    font-size: 36px;
-  }
-}
-
-/* --------- <= 900px --------- */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
   header {
     flex-direction: column;
@@ -337,113 +205,20 @@ iframe {
 
   nav button {
     margin-left: 0;
-    padding: 10px 18px;
-    font-size: 12px;
-  }
-
-  #home.active {
-    flex-direction: column;
-  }
-
-  .home-left,
-  .home-right {
-    width: 100%;
-    text-align: center;
-  }
-
-  .home-right img {
-    padding: 24px;
-  }
-
-  iframe {
-    height: 70vh;
   }
 }
 
-/* --------- <= 600px --------- */
 @media (max-width: 600px) {
-  .logo {
-    font-size: 18px;
-    letter-spacing: 4px;
-  }
-
-  .home-left {
-    padding: 56px 24px;
-  }
-
-  .home-left h1 {
+  #welcome-text {
     font-size: 32px;
   }
 
   .subtitle {
     font-size: 12px;
-    letter-spacing: 1px;
   }
 
-  #letters h1,
-  #certifications h1,
-  #about h1 {
-    font-size: 30px;
-    margin-bottom: 40px;
-  }
-
-  .card,
-  .cert-card {
-    padding: 24px;
-    border-radius: 20px;
-  }
-
-  iframe {
-    height: 65vh;
-    border-radius: 18px;
-  }
-
-  /* CONTATTI: da riga a colonna */
   .contacts {
     flex-direction: column;
-    align-items: center;
     gap: 16px;
-  }
-
-  .timeline {
-    padding-left: 28px;
-  }
-
-  .timeline::before {
-    left: 6px;
-  }
-
-  .timeline-item::before {
-    left: -10px;
-  }
-}
-
-/* --------- <= 420px --------- */
-@media (max-width: 420px) {
-  header {
-    padding: 20px;
-  }
-
-  nav button {
-    padding: 8px 14px;
-    font-size: 11px;
-  }
-
-  .home-left h1 {
-    font-size: 28px;
-  }
-
-  .subtitle {
-    font-size: 11px;
-  }
-
-  .contacts {
-    padding: 32px 16px;
-    gap: 12px;
-  }
-
-  .contacts a,
-  .contacts span {
-    font-size: 13px;
   }
 }
