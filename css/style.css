@@ -62,17 +62,18 @@ main {
 section {
   display: none;
   min-height: calc(100vh - 160px);
+  width: 100%;
 }
 
 section.active {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ================= HOME ================= */
 .home-center {
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
 }
 
@@ -96,6 +97,7 @@ section.active {
 /* ================= RESUME ================= */
 #cv.active {
   padding: 64px 80px;
+  align-items: flex-start;
 }
 
 iframe {
