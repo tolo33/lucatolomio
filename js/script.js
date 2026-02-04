@@ -1,44 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ================= NAV / SECTIONS ================= */
   function hideAllSections() {
     document.querySelectorAll("main section").forEach(section => {
       section.classList.remove("active");
     });
   }
 
-  document.getElementById("btnHome")?.addEventListener("click", () => {
+  document.getElementById("btnHome").addEventListener("click", () => {
     hideAllSections();
     document.getElementById("home").classList.add("active");
-    stopEmojiRain();
   });
 
-  document.getElementById("btnCV")?.addEventListener("click", () => {
+  document.getElementById("btnCV").addEventListener("click", () => {
     hideAllSections();
     document.getElementById("cv").classList.add("active");
-    stopEmojiRain();
   });
 
-  document.getElementById("btnLetters")?.addEventListener("click", () => {
+  document.getElementById("btnLetters").addEventListener("click", () => {
     hideAllSections();
     document.getElementById("letters").classList.add("active");
-    stopEmojiRain();
   });
 
-  document.getElementById("btnCertifications")?.addEventListener("click", () => {
+  document.getElementById("btnCertifications").addEventListener("click", () => {
     hideAllSections();
     document.getElementById("certifications").classList.add("active");
-    stopEmojiRain();
-  });
-
-  document.getElementById("btnAbout")?.addEventListener("click", () => {
-    hideAllSections();
-    document.getElementById("about").classList.add("active");
-    startEmojiRain();
   });
 
 });
-
 
 /* ================= MULTILINGUA HOME ================= */
 const texts = [
@@ -47,12 +35,7 @@ const texts = [
   { welcome: "BIENVENIDO 🪐", subtitle: "Estás visitando mi portafolio digital" },
   { welcome: "WILLKOMMEN 🪐", subtitle: "Du besuchst mein digitales Portfolio" },
   { welcome: "BIENVENUE 🪐", subtitle: "Vous visitez mon portfolio numérique" },
-  { welcome: "BEM-VINDO 🪐", subtitle: "Você está visitando meu portfólio digital" },
-  { welcome: "欢迎 🪐", subtitle: "你正在访问我的数字作品集" },
-  { welcome: "ДОБРО ПОЖАЛОВАТЬ 🪐", subtitle: "Вы просматриваете мое цифровое портфолио" },
-  { welcome: "مرحباً 🪐", subtitle: "أنت تزور معرض أعمالي الرقمي" },
-  { welcome: "ようこそ 🪐", subtitle: "私のデジタルポートフォリオへようこそ" },
-  { welcome: "स्वागत है 🪐", subtitle: "आप मेरा डिजिटल पोर्टफोलियो देख रहे हैं" }
+  { welcome: "BEM-VINDO 🪐", subtitle: "Você está visitando meu portfólio digital" }
 ];
 
 let currentIndex = 0;
