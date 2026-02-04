@@ -40,37 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* ================= EMOJI RAIN ================= */
-const emojiContainer = document.getElementById("emoji-rain");
-const hobbyEmojis = ["🏉","🥋","🏋️‍♂️","🏂","💻","🍕","🏔️","🇬🇧","🇮🇹","✈️","🥗","☕️","🎵"];
-
-let emojiInterval = null;
-
-function startEmojiRain() {
-  if (emojiInterval) return;
-
-  emojiInterval = setInterval(() => {
-    const emoji = document.createElement("div");
-    emoji.className = "emoji";
-    emoji.textContent = hobbyEmojis[Math.floor(Math.random() * hobbyEmojis.length)];
-
-    emoji.style.left = Math.random() * 100 + "vw";
-    emoji.style.fontSize = 26 + Math.random() * 14 + "px";
-    emoji.style.animationDuration = 3 + Math.random() * 4 + "s";
-
-    emojiContainer.appendChild(emoji);
-
-    setTimeout(() => emoji.remove(), 7000);
-  }, 280);
-}
-
-function stopEmojiRain() {
-  clearInterval(emojiInterval);
-  emojiInterval = null;
-  emojiContainer.innerHTML = "";
-}
-
-
 /* ================= MULTILINGUA HOME ================= */
 const texts = [
   { welcome: "WELCOME 🪐", subtitle: "You are now visiting my digital portfolio" },
