@@ -191,6 +191,31 @@ iframe {
   text-decoration: none;
 }
 
+/* ================= LOGO HOVER PULSE ================= */
+.logo {
+  cursor: pointer;
+}
+
+.logo:hover {
+  animation: logo-pulse 0.8s ease-in-out infinite;
+}
+
+@keyframes logo-pulse {
+  0% {
+    transform: scale(1);
+    letter-spacing: 6px;
+  }
+  50% {
+    transform: scale(1.06);
+    letter-spacing: 8px;
+  }
+  100% {
+    transform: scale(1);
+    letter-spacing: 6px;
+  }
+}
+
+
 /* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
   header {
