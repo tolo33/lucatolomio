@@ -245,6 +245,19 @@ iframe {
 .contact-item {
   white-space: nowrap;
 }
+/* ================= NAV ACTIVE BUTTON ================= */
+nav button.active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+@media (hover: hover) {
+  nav button.active:hover {
+    background: #111;
+  }
+}
+
 
 /* ================= TABLET ================= */
 @media (max-width: 900px) {
