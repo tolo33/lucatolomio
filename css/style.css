@@ -17,8 +17,8 @@ html {
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont,
                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: #F9FAFB;
-  color: #1F2937;
+  background-color: #fafafa;
+  color: #111;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -32,7 +32,7 @@ a:active {
   text-decoration: none;
 }
 
-/* ================= FORM RESET ================= */
+/* ================= FORM ELEMENT RESET ================= */
 button,
 input,
 textarea {
@@ -52,8 +52,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: clamp(20px, 4vw, 28px) clamp(24px, 6vw, 56px);
-  background: #FFFFFF;
-  border-bottom: 1px solid #E5E7EB;
+  background: #ffffff;
+  border-bottom: 1px solid #eaeaea;
 }
 
 /* ================= LOGO ================= */
@@ -66,7 +66,7 @@ header {
 
 .logo .surname {
   font-weight: 300;
-  opacity: 0.65;
+  opacity: 0.7;
 }
 
 @media (hover: hover) {
@@ -91,8 +91,8 @@ nav {
 }
 
 nav button {
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  background: #ffffff;
+  border: 1px solid #dddddd;
   border-radius: 999px;
   padding: 12px 24px;
   min-height: 44px;
@@ -100,16 +100,14 @@ nav button {
   letter-spacing: 1px;
   cursor: pointer;
   transition: background 0.25s ease,
-              color 0.25s ease,
               border-color 0.25s ease,
               transform 0.15s ease;
 }
 
 @media (hover: hover) {
   nav button:hover {
-    background: #ECFDF5;
-    border-color: #10B981;
-    color: #065F46;
+    background: #f0f0f0;
+    border-color: #cccccc;
   }
 }
 
@@ -117,17 +115,10 @@ nav button:active {
   transform: scale(0.96);
 }
 
-/* ================= NAV ACTIVE BUTTON ================= */
+/* ================= NAV ACTIVE (NEUTRAL) ================= */
 nav button.active {
-  background: #10B981;
-  color: #FFFFFF;
-  border-color: #10B981;
-}
-
-@media (hover: hover) {
-  nav button.active:hover {
-    background: #34D399;
-  }
+  background: #e5e5e5;
+  border-color: #bbbbbb;
 }
 
 /* ================= MAIN ================= */
@@ -162,7 +153,7 @@ section.active {
 
 .subtitle {
   font-size: clamp(13px, 3vw, 14px);
-  color: #6B7280;
+  color: #666;
   letter-spacing: 1.5px;
   max-width: 480px;
 }
@@ -177,7 +168,7 @@ iframe {
   width: 100%;
   height: min(80vh, 900px);
   border-radius: 24px;
-  border: 1px solid #E5E7EB;
+  border: 1px solid #eeeeee;
 }
 
 /* ================= LETTERS ================= */
@@ -195,10 +186,10 @@ iframe {
 .card {
   width: 100%;
   max-width: 640px;
-  background: #FFFFFF;
+  background: #ffffff;
   padding: clamp(24px, 4vw, 32px);
   border-radius: 24px;
-  border: 1px solid #E5E7EB;
+  border: 1px solid #eeeeee;
   box-shadow: 0 10px 30px rgba(0,0,0,0.04);
   margin-bottom: 32px;
 }
@@ -226,10 +217,10 @@ iframe {
 }
 
 .cert-card {
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 28px;
   padding: clamp(24px, 4vw, 32px);
-  border: 1px solid #E5E7EB;
+  border: 1px solid #eeeeee;
   box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 }
 
@@ -247,8 +238,8 @@ iframe {
   flex-wrap: wrap;
   gap: 16px 56px;
   padding: 40px 24px;
-  background: #FFFFFF;
-  border-top: 1px solid #E5E7EB;
+  background: #ffffff;
+  border-top: 1px solid #eaeaea;
   text-align: center;
 }
 
@@ -256,12 +247,11 @@ iframe {
   white-space: nowrap;
 }
 
-/* ================= FOOTER NOTE ================= */
 .footer-note {
   width: 100%;
   margin-top: 24px;
   font-size: 12px;
-  color: #6B7280;
+  color: #777;
   letter-spacing: 1px;
 }
 
@@ -292,4 +282,3 @@ iframe {
     gap: 20px;
   }
 }
-
