@@ -245,6 +245,16 @@ iframe {
 .contact-item {
   white-space: nowrap;
 }
+/* ================= FOOTER NOTE ================= */
+.footer-note {
+  width: 100%;
+  text-align: center;
+  margin-top: 24px;
+  font-size: 12px;
+  color: #777;
+  letter-spacing: 1px;
+}
+
 /* ================= NAV ACTIVE BUTTON ================= */
 nav button.active {
   background: #111;
