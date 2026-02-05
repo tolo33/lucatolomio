@@ -7,23 +7,22 @@
   box-sizing: border-box;
 }
 
-/* ================= ROOT / MOBILE SAFETY ================= */
+/* ================= ROOT ================= */
 html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
 }
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont,
                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: #fafafa;
-  color: #111;
-  line-height: 1.5;
+  color: #0f172a;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ================= LINK RESET ================= */
+/* ================= LINKS ================= */
 a,
 a:visited,
 a:hover,
@@ -32,7 +31,7 @@ a:active {
   text-decoration: none;
 }
 
-/* ================= FORM ELEMENT RESET ================= */
+/* ================= FORM RESET ================= */
 button,
 input,
 textarea {
@@ -53,7 +52,7 @@ header {
   align-items: center;
   padding: clamp(20px, 4vw, 28px) clamp(24px, 6vw, 56px);
   background: #ffffff;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 /* ================= LOGO ================= */
@@ -62,6 +61,7 @@ header {
   letter-spacing: 6px;
   cursor: pointer;
   user-select: none;
+  color: #0f3d3e;
 }
 
 .logo .surname {
@@ -92,22 +92,22 @@ nav {
 
 nav button {
   background: #ffffff;
-  border: 1px solid #dddddd;
+  border: 1px solid #e2e8f0;
   border-radius: 999px;
   padding: 12px 24px;
   min-height: 44px;
   font-size: 14px;
   letter-spacing: 1px;
   cursor: pointer;
-  transition: background 0.25s ease,
-              border-color 0.25s ease,
-              transform 0.15s ease;
+  transition: all 0.25s ease;
+  color: #0f172a;
 }
 
 @media (hover: hover) {
   nav button:hover {
-    background: #f0f0f0;
-    border-color: #cccccc;
+    background: #e6f2f1;
+    border-color: #2f7f7b;
+    color: #0f3d3e;
   }
 }
 
@@ -115,10 +115,11 @@ nav button:active {
   transform: scale(0.96);
 }
 
-/* ================= NAV ACTIVE (NEUTRAL) ================= */
+/* ================= NAV ACTIVE ================= */
 nav button.active {
-  background: #e5e5e5;
-  border-color: #bbbbbb;
+  background: #0f3d3e;
+  color: #ffffff;
+  border-color: #0f3d3e;
 }
 
 /* ================= MAIN ================= */
@@ -149,11 +150,12 @@ section.active {
 #welcome-text {
   font-size: clamp(30px, 7vw, 44px);
   margin-bottom: 12px;
+  color: #0f3d3e;
 }
 
 .subtitle {
   font-size: clamp(13px, 3vw, 14px);
-  color: #666;
+  color: #64748b;
   letter-spacing: 1.5px;
   max-width: 480px;
 }
@@ -168,7 +170,7 @@ iframe {
   width: 100%;
   height: min(80vh, 900px);
   border-radius: 24px;
-  border: 1px solid #eeeeee;
+  border: 1px solid #e2e8f0;
 }
 
 /* ================= LETTERS ================= */
@@ -181,6 +183,7 @@ iframe {
 #letters h1 {
   font-size: clamp(30px, 6vw, 42px);
   margin-bottom: 48px;
+  color: #0f3d3e;
 }
 
 .card {
@@ -189,15 +192,9 @@ iframe {
   background: #ffffff;
   padding: clamp(24px, 4vw, 32px);
   border-radius: 24px;
-  border: 1px solid #eeeeee;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(15, 61, 62, 0.08);
   margin-bottom: 32px;
-}
-
-.reference-img {
-  width: 100%;
-  border-radius: 16px;
-  margin-top: 20px;
 }
 
 /* ================= CERTIFICATIONS ================= */
@@ -220,14 +217,8 @@ iframe {
   background: #ffffff;
   border-radius: 28px;
   padding: clamp(24px, 4vw, 32px);
-  border: 1px solid #eeeeee;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-}
-
-.cert-card img {
-  width: 100%;
-  border-radius: 16px;
-  margin-bottom: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 40px rgba(15, 61, 62, 0.1);
 }
 
 /* ================= FOOTER ================= */
@@ -239,19 +230,21 @@ iframe {
   gap: 16px 56px;
   padding: 40px 24px;
   background: #ffffff;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid #e2e8f0;
   text-align: center;
 }
 
 .contact-item {
   white-space: nowrap;
+  color: #0f3d3e;
+  font-weight: 500;
 }
 
 .footer-note {
   width: 100%;
   margin-top: 24px;
   font-size: 12px;
-  color: #777;
+  color: #64748b;
   letter-spacing: 1px;
 }
 
