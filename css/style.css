@@ -7,22 +7,23 @@
   box-sizing: border-box;
 }
 
-/* ================= ROOT ================= */
+/* ================= ROOT / MOBILE SAFETY ================= */
 html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont,
                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: #fafafa;
-  color: #1f2937;
-  line-height: 1.6;
+  color: #111;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ================= LINKS (NO BLUE) ================= */
+/* ================= LINK RESET ================= */
 a,
 a:visited,
 a:hover,
@@ -31,7 +32,7 @@ a:active {
   text-decoration: none;
 }
 
-/* ================= FORM RESET ================= */
+/* ================= FORM ELEMENT RESET ================= */
 button,
 input,
 textarea {
@@ -52,7 +53,7 @@ header {
   align-items: center;
   padding: clamp(20px, 4vw, 28px) clamp(24px, 6vw, 56px);
   background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #eaeaea;
 }
 
 /* ================= LOGO ================= */
@@ -61,7 +62,6 @@ header {
   letter-spacing: 6px;
   cursor: pointer;
   user-select: none;
-  color: #d97706;
 }
 
 .logo .surname {
@@ -92,22 +92,22 @@ nav {
 
 nav button {
   background: #ffffff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #dddddd;
   border-radius: 999px;
   padding: 12px 24px;
   min-height: 44px;
   font-size: 14px;
   letter-spacing: 1px;
   cursor: pointer;
-  transition: all 0.25s ease;
-  color: #1f2937;
+  transition: background 0.25s ease,
+              border-color 0.25s ease,
+              transform 0.15s ease;
 }
 
 @media (hover: hover) {
   nav button:hover {
-    background: #fff7ed;
-    border-color: #f59e0b;
-    color: #d97706;
+    background: #f0f0f0;
+    border-color: #cccccc;
   }
 }
 
@@ -115,11 +115,10 @@ nav button:active {
   transform: scale(0.96);
 }
 
-/* ================= NAV ACTIVE ================= */
+/* ================= NAV ACTIVE (NEUTRAL) ================= */
 nav button.active {
-  background: #d97706;
-  color: #ffffff;
-  border-color: #d97706;
+  background: #e5e5e5;
+  border-color: #bbbbbb;
 }
 
 /* ================= MAIN ================= */
@@ -150,12 +149,11 @@ section.active {
 #welcome-text {
   font-size: clamp(30px, 7vw, 44px);
   margin-bottom: 12px;
-  color: #d97706;
 }
 
 .subtitle {
   font-size: clamp(13px, 3vw, 14px);
-  color: #6b7280;
+  color: #666;
   letter-spacing: 1.5px;
   max-width: 480px;
 }
@@ -170,7 +168,7 @@ iframe {
   width: 100%;
   height: min(80vh, 900px);
   border-radius: 24px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #eeeeee;
 }
 
 /* ================= LETTERS ================= */
@@ -183,7 +181,6 @@ iframe {
 #letters h1 {
   font-size: clamp(30px, 6vw, 42px);
   margin-bottom: 48px;
-  color: #d97706;
 }
 
 .card {
@@ -192,9 +189,15 @@ iframe {
   background: #ffffff;
   padding: clamp(24px, 4vw, 32px);
   border-radius: 24px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 10px 30px rgba(217, 119, 6, 0.15);
+  border: 1px solid #eeeeee;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
   margin-bottom: 32px;
+}
+
+.reference-img {
+  width: 100%;
+  border-radius: 16px;
+  margin-top: 20px;
 }
 
 /* ================= CERTIFICATIONS ================= */
@@ -217,8 +220,14 @@ iframe {
   background: #ffffff;
   border-radius: 28px;
   padding: clamp(24px, 4vw, 32px);
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 20px 40px rgba(217, 119, 6, 0.18);
+  border: 1px solid #eeeeee;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.cert-card img {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 24px;
 }
 
 /* ================= FOOTER ================= */
@@ -230,21 +239,19 @@ iframe {
   gap: 16px 56px;
   padding: 40px 24px;
   background: #ffffff;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid #eaeaea;
   text-align: center;
 }
 
 .contact-item {
   white-space: nowrap;
-  color: #d97706;
-  font-weight: 500;
 }
 
 .footer-note {
   width: 100%;
   margin-top: 24px;
   font-size: 12px;
-  color: #6b7280;
+  color: #777;
   letter-spacing: 1px;
 }
 
