@@ -257,9 +257,9 @@ iframe {
 
 /* ================= NAV ACTIVE BUTTON ================= */
 nav button.active {
-  background: #111;
+  background: #10B981;
   color: #fff;
-  border-color: #111;
+  border-color: #10B981;
 }
 
 @media (hover: hover) {
