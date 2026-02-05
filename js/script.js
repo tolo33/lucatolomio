@@ -1,32 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  const buttons = document.querySelectorAll("nav button");
+  const sections = document.querySelectorAll("main section");
+
   function hideAllSections() {
-    document.querySelectorAll("main section").forEach(section => {
-      section.classList.remove("active");
-    });
+    sections.forEach(section => section.classList.remove("active"));
+    buttons.forEach(btn => btn.classList.remove("active"));
+  }
+
+  function activate(btnId, sectionId) {
+    hideAllSections();
+    document.getElementById(sectionId).classList.add("active");
+    document.getElementById(btnId).classList.add("active");
   }
 
   document.getElementById("btnHome").addEventListener("click", () => {
-    hideAllSections();
-    document.getElementById("home").classList.add("active");
+    activate("btnHome", "home");
   });
 
   document.getElementById("btnCV").addEventListener("click", () => {
-    hideAllSections();
-    document.getElementById("cv").classList.add("active");
+    activate("btnCV", "cv");
   });
 
   document.getElementById("btnLetters").addEventListener("click", () => {
-    hideAllSections();
-    document.getElementById("letters").classList.add("active");
+    activate("btnLetters", "letters");
   });
 
   document.getElementById("btnCertifications").addEventListener("click", () => {
-    hideAllSections();
-    document.getElementById("certifications").classList.add("active");
+    activate("btnCertifications", "certifications");
   });
 
+  // Stato iniziale
+  document.getElementById("btnHome").classList.add("active");
 });
+
 
 /* ================= MULTILINGUA HOME ================= */
 const texts = [
