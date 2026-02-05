@@ -17,13 +17,13 @@ html {
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont,
                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: #fafafa;
-  color: #111;
+  background-color: #F9FAFB;
+  color: #1F2937;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ================= LINK RESET (NO BLUE ANYWHERE) ================= */
+/* ================= LINK RESET ================= */
 a,
 a:visited,
 a:hover,
@@ -32,7 +32,7 @@ a:active {
   text-decoration: none;
 }
 
-/* ================= FORM ELEMENT RESET ================= */
+/* ================= FORM RESET ================= */
 button,
 input,
 textarea {
@@ -52,8 +52,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: clamp(20px, 4vw, 28px) clamp(24px, 6vw, 56px);
-  background: #ffffff;
-  border-bottom: 1px solid #eaeaea;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
 }
 
 /* ================= LOGO ================= */
@@ -66,10 +66,9 @@ header {
 
 .logo .surname {
   font-weight: 300;
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
-/* Pulse animation only where hover exists */
 @media (hover: hover) {
   .logo:hover {
     animation: logo-pulse 0.9s ease-in-out infinite;
@@ -77,18 +76,9 @@ header {
 }
 
 @keyframes logo-pulse {
-  0% {
-    transform: scale(1);
-    letter-spacing: 6px;
-  }
-  50% {
-    transform: scale(1.05);
-    letter-spacing: 8px;
-  }
-  100% {
-    transform: scale(1);
-    letter-spacing: 6px;
-  }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 /* ================= NAV ================= */
@@ -101,23 +91,43 @@ nav {
 }
 
 nav button {
-  background: #ffffff;
-  border: 1px solid #dddddd;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
   border-radius: 999px;
   padding: 12px 24px;
   min-height: 44px;
   font-size: 14px;
   letter-spacing: 1px;
   cursor: pointer;
-  transition: background 0.25s ease, transform 0.15s ease;
+  transition: background 0.25s ease,
+              color 0.25s ease,
+              border-color 0.25s ease,
+              transform 0.15s ease;
 }
 
-nav button:hover {
-  background: #f0f0f0;
+@media (hover: hover) {
+  nav button:hover {
+    background: #ECFDF5;
+    border-color: #10B981;
+    color: #065F46;
+  }
 }
 
 nav button:active {
   transform: scale(0.96);
+}
+
+/* ================= NAV ACTIVE BUTTON ================= */
+nav button.active {
+  background: #10B981;
+  color: #FFFFFF;
+  border-color: #10B981;
+}
+
+@media (hover: hover) {
+  nav button.active:hover {
+    background: #34D399;
+  }
 }
 
 /* ================= MAIN ================= */
@@ -152,7 +162,7 @@ section.active {
 
 .subtitle {
   font-size: clamp(13px, 3vw, 14px);
-  color: #666;
+  color: #6B7280;
   letter-spacing: 1.5px;
   max-width: 480px;
 }
@@ -167,7 +177,7 @@ iframe {
   width: 100%;
   height: min(80vh, 900px);
   border-radius: 24px;
-  border: 1px solid #eeeeee;
+  border: 1px solid #E5E7EB;
 }
 
 /* ================= LETTERS ================= */
@@ -185,11 +195,11 @@ iframe {
 .card {
   width: 100%;
   max-width: 640px;
-  background: #ffffff;
+  background: #FFFFFF;
   padding: clamp(24px, 4vw, 32px);
   border-radius: 24px;
-  border: 1px solid #eeeeee;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
   margin-bottom: 32px;
 }
 
@@ -216,11 +226,11 @@ iframe {
 }
 
 .cert-card {
-  background: #ffffff;
+  background: #FFFFFF;
   border-radius: 28px;
   padding: clamp(24px, 4vw, 32px);
-  border: 1px solid #eeeeee;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 }
 
 .cert-card img {
@@ -229,7 +239,7 @@ iframe {
   margin-bottom: 24px;
 }
 
-/* ================= FOOTER / CONTACTS ================= */
+/* ================= FOOTER ================= */
 .contacts {
   display: flex;
   justify-content: center;
@@ -237,37 +247,23 @@ iframe {
   flex-wrap: wrap;
   gap: 16px 56px;
   padding: 40px 24px;
-  background: #ffffff;
-  border-top: 1px solid #eaeaea;
+  background: #FFFFFF;
+  border-top: 1px solid #E5E7EB;
   text-align: center;
 }
 
 .contact-item {
   white-space: nowrap;
 }
+
 /* ================= FOOTER NOTE ================= */
 .footer-note {
   width: 100%;
-  text-align: center;
   margin-top: 24px;
   font-size: 12px;
-  color: #777;
+  color: #6B7280;
   letter-spacing: 1px;
 }
-
-/* ================= NAV ACTIVE BUTTON ================= */
-nav button.active {
-  background: #10B981;
-  color: #fff;
-  border-color: #10B981;
-}
-
-@media (hover: hover) {
-  nav button.active:hover {
-    background: #111;
-  }
-}
-
 
 /* ================= TABLET ================= */
 @media (max-width: 900px) {
@@ -277,7 +273,7 @@ nav button.active {
   }
 }
 
-/* ================= MOBILE (REAL FIX) ================= */
+/* ================= MOBILE ================= */
 @media (max-width: 600px) {
   nav {
     width: 100%;
@@ -296,3 +292,4 @@ nav button.active {
     gap: 20px;
   }
 }
+
