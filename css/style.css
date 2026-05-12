@@ -109,6 +109,8 @@ nav button:active {
 /* ================= NAV ACTIVE (NEUTRAL) ================= */
 nav button.active {
   text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
 }
 
 /* ================= MAIN ================= */
