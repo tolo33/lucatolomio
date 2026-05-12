@@ -95,6 +95,7 @@ nav button {
   padding: 12px 24px;
   min-height: 44px;
   font-size: 14px;
+  font-weight: bold;
   letter-spacing: 1px;
   cursor: pointer;
 
@@ -108,7 +109,7 @@ nav button:active {
 /* ================= NAV ACTIVE (NEUTRAL) ================= */
 nav button.active {
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: 4px;
   text-decoration-thickness: 2px;
 }
 
