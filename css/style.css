@@ -112,7 +112,46 @@ nav button.active {
   text-underline-offset: 4px;
   text-decoration-thickness: 2px;
 }
+/* ================= WELCOME TICKER ================= */
 
+.welcome-bar {
+  width: 100%;
+  overflow: hidden;
+  background: coral;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.welcome-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  white-space: nowrap;
+  padding: 10px 0;
+  animation: ticker-scroll 18s linear infinite;
+}
+
+.welcome-track span {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.welcome-track .dot {
+  margin: 0 24px;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
 /* ================= MAIN ================= */
 main {
   min-height: calc(100vh - 160px);
