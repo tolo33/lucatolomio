@@ -122,7 +122,7 @@ nav button.active {
 .welcome-track {
   display: flex;
   width: max-content;
-  animation: marquee 20s linear infinite;
+  animation: marquee 30s linear infinite;
 }
 
 .welcome-content {
