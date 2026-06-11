@@ -298,7 +298,7 @@ iframe {
 
 .card {
   width: 100%;
-  max-width: 640px;
+  max-width: 700px;
   background: #ffffff;
   padding: clamp(24px, 4vw, 32px);
   border-radius: 24px;
@@ -326,7 +326,7 @@ iframe {
   gap: 32px;
   margin-top: 48px;
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
 }
 
 .cert-card {
