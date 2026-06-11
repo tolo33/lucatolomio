@@ -62,3 +62,30 @@ setInterval(() => {
     subtitleEl.classList.remove("fade-out");
   }, 600);
 }, 5000);
+
+const track = document.getElementById("welcomeTrack");
+
+const words = ["WELCOME", "BENVENUTO"];
+
+function createContent() {
+  const content = document.createElement("div");
+  content.classList.add("welcome-content");
+
+  for (let i = 0; i < 15; i++) {
+    const text = document.createElement("span");
+    text.textContent = words[i % words.length];
+
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    dot.textContent = "•";
+
+    content.appendChild(text);
+    content.appendChild(dot);
+  }
+
+  return content;
+}
+
+// due copie identiche per il loop infinito
+track.appendChild(createContent());
+track.appendChild(createContent());
